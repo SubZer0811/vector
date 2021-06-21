@@ -37,12 +37,8 @@ class point(object):
 	def __new__(cls, pt):
 		if isinstance(pt, tuple):
 			if len(pt) == 2:
-				if WARNING:
-					print("Creating point2d object")
 				return point2d(pt)
 			if len(pt) == 3:
-				if WARNING:
-					print("Creating point3d object")
 				return super(point, cls).__new__(cls)
 			assert len(pt) in [2, 3], "point must be either 2 or 3 dimensional."
 		if isinstance(pt, vector2d):
