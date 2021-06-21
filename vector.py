@@ -117,13 +117,13 @@ class vector2d:
 			return vector((self.vector[0]-b.vector[0], self.vector[1]-b.vector[1]))
 
 	def __mul__(self, b):
-		if isinstance(b, vector):
+		if isinstance(b, vector2d):
 			return (self.vector[0]*b.vector[0] + self.vector[1]*b.vector[1])
 		if isinstance(b, (float, int)):
 			return vector2d((self.vector[0]*b, self.vector[1]*b))
 
 	def __rmul__(self, b):
-		if isinstance(b, vector):
+		if isinstance(b, vector2d):
 			return (self.vector[0]*b.vector[0] + self.vector[1]*b.vector[1])
 		if isinstance(b, (float, int)):
 			return vector2d((self.vector[0]*b, self.vector[1]*b))
@@ -135,7 +135,7 @@ class vector2d:
 		return f"{self.vector[0]}i + {self.vector[1]}j"
 
 	def magnitude(self):
-		return (self.vector[0] ** 2 + self.vector[1] ** 2)
+		return pow(self.vector[0] ** 2 + self.vector[1] ** 2, 1/2)
 
 class vector(object):
 
@@ -217,7 +217,7 @@ class vector(object):
 		return f"{self.vector[0]}i + {self.vector[1]}j + {self.vector[2]}k"
 
 	def magnitude(self):
-		return (self.vector[0] ** 2 + self.vector[1] ** 2 + self.vector[2] ** 2)
+		return pow(self.vector[0] ** 2 + self.vector[1] ** 2 + self.vector[2] ** 2, 1/2)
 
 if __name__ == "__main__":
 
