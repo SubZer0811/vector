@@ -1,5 +1,3 @@
-WARNING = 1
-
 class point2d:
 
 	def __init__(self, pt):
@@ -127,6 +125,9 @@ class vector2d:
 			return (self.vector[0]*b.vector[0] + self.vector[1]*b.vector[1])
 		if isinstance(b, (float, int)):
 			return vector2d((self.vector[0]*b, self.vector[1]*b))
+
+	def __truediv__(self, b):
+		return vector2d((self.vector[0]/b, self.vector[1]/b))
 			
 	def __xor__(self, b):
 		return vector((0, 0, self.vector[0]*b.vector[1] - self.vector[1]*b.vector[0]))
@@ -210,6 +211,9 @@ class vector(object):
 		if isinstance(b, (float, int)):
 			return vector((self.vector[0]*b, self.vector[1]*b, self.vector[2]*b))
 			
+	def __truediv__(self, b):
+		return vector((self.vector[0]/b, self.vector[1]/b, self.vector[2]/b))
+
 	def __xor__(self, b):
 		return vector((self.vector[1]*b.vector[2] - self.vector[2]*b.vector[1], -(self.vector[0]*b.vector[2] - self.vector[2]*b.vector[0]), self.vector[0]*b.vector[1] - self.vector[1]*b.vector[0]))
 
@@ -221,5 +225,5 @@ class vector(object):
 
 if __name__ == "__main__":
 
-	v1 = vector((1,))
-	print(v1)
+	v1 = vector((1,1,2))
+	print(v1/3)
