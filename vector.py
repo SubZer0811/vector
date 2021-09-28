@@ -1,5 +1,5 @@
 '''
-The intention of this library is to be able to perform vector operations with ease.
+	The intention of this library is to be able to perform vector operations with ease.
 '''
 class point2d:
 
