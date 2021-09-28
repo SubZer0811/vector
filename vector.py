@@ -1,3 +1,6 @@
+'''
+The intention of this library is to be able to perform vector operations with ease.
+'''
 class point2d:
 
 	def __init__(self, pt):
